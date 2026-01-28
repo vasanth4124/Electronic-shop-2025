@@ -1,0 +1,218 @@
+/* ===============================header================================ */
+
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+.header {
+    background-color: rgb(139, 137, 137);
+    box-shadow: 0 2px 8px black;
+    width: 1514px;
+    height: 110px;
+    border-radius: 10px;
+    position: fixed;
+    z-index: 4;
+}
+
+.introimg {
+    width: 200px;
+    height: 55px;
+    margin-top: 35px;
+    margin-left: 200px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.uldiv {
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+li {
+    padding: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: black;
+}
+
+.headerparent {
+    display: flex;
+    padding-top: 0px;
+    position: fixed;
+}
+
+.login {
+    background-color: rgb(101, 100, 100);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-bottom: 10px;
+}
+
+.login:hover {
+    background-color: black;
+    color: white;
+}
+
+/* ===========================header====================== */
+
+.crocel {
+    padding-top: 110px;
+    border-radius: 30px;
+}
+
+.para {
+    font-size: 16px;
+}
+
+.h1 {
+    border-radius: 10px;
+    box-shadow: 0 3px 8px black;
+    background-color: rgb(139, 137, 137);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.img2 {
+    height: 400px;
+    width: 600px;
+    margin-left: 100px;
+}
+
+.para2 {
+    margin-top: 150px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.products-wrapper {
+  display: flex;
+  flex-wrap: nowrap;       /* 🔥 THIS IS THE KEY */
+  justify-content: center;
+  gap: 25px;
+  overflow-x: auto;        /* scroll if many items */
+}
+
+/* Product card */
+.cart {
+  flex: 0 0 300px;         /* fixed width */
+}
+
+/* Image fix */
+.cart img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+/* Hide non-matching products */
+.cart.hide {
+  display: none;
+}
+
+
+
+.aboutdiv {
+    display: flex;
+    padding-left: 300px;
+}
+
+.aboutimg {
+    padding-left: 350px;
+}
+
+.aboutnum {
+    display: flex;
+    padding-left: 260px;
+}
+
+.aboutnum2 {
+    padding-left: 270px;
+}
+
+.h3 {
+    font-size: x-large;
+    font-style: italic;
+    padding-right: 1000px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.cart:hover {
+    transform: scale(1.01);
+    transition: 0.6s;
+}
+
+
+/* HIDE EFFECT */
+
+
+/* CARD FIX */
+
+.card img {
+    object-fit: cover;
+}
+
+/* MOBILE FIX */
+@media (max-width: 576px) {
+    .products-wrapper {
+        grid-template-columns: 3fr;
+    }
+}
+
+/* ==============================footer================================== */
+
+.footer {
+    padding: 25px;
+    background-color: rgb(139, 137, 137);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer a:hover {
+    color: black;
+}
+
+.footerdiv {
+    display: flex;
+    margin-left: 90px;
+}
+
+.icon {
+    border: 1px solid rgb(255, 255, 255);
+    margin: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 25px;
+}
+
+
+
+.icon:hover {
+    border-color: black;
+    color: black;
+}
+
+
+.last {
+    color: white;
+    height: 30px;
+    background-color: rgb(74, 74, 74);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* =================================footer================================== */

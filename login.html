@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapmart-Showroom-Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./script.css">
+    <link rel="icon" href="./Lapmart- logo.png">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="headerparent">
+            <div>
+                <img src="./Lapmart- logo.png" alt="image" class="introimg">
+            </div>
+            <div class="uldiv">
+                <ul>
+                    <li><a href="./intro.html">Home</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="" class="dropdown-toggle" data-bs-toggle="dropdown">Laptops</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">Asus</a></li>
+                            <li><a href="" class="dropdown-item">Dell</a></li>
+                            <li><a href="" class="dropdown-item">Lenova</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-bs-toggle="dropdown">Mobiles</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">vivo</a></li>
+                            <li><a href="" class="dropdown-item">Oppo</a></li>
+                            <li><a href="" class="dropdown-item">Google</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-bs-toggle="dropdown">Smart watch</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">Firebolt</a></li>
+                            <li><a href="" class="dropdown-item">Boat</a></li>
+                            <li><a href="" class="dropdown-item">Apple</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="mobile">About us</a></li>
+                    <li><a href="">contact</a></li>
+                    <li style="color: white;">Cart 🛒0</li>
+                    <li><a href="./login.html"><button class="login">Login</button></a></li>
+                </ul>
+            </div>
+        </div>
+    </header><br>
+
+    <section class="headform">
+        <div class="logindiv">
+            <div>
+                <h2 style="font-style: italic;">Login form :</h2>
+                <hr style="width: 180px;">
+                <br>
+                <pre>Name       :  <input type="text" placeholder="Enter ur name*" id="i1"></pre><br><br>
+                <pre>Mobile      :  <input type="text" placeholder="Enter mobile number*" id="i2"></pre><br><br>
+                <pre>Gmail        :  <input type="text" placeholder="Enter gmail*" id="i3"></pre><br><br>
+                <pre>Password   :  <input type="password" placeholder="Enter password*" id="i4"></pre><br>
+                <button class="btn btn-primary" onclick="validation()">Submit</button>
+            </div>
+
+            <div class="map">
+                <h2 style="font-style: italic;">Location</h2>
+                <hr style="width: 130px;">
+                <iframe
+                    src="
+                    https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125042.3461117986!2d78.05589513187309!3d11.653723377467443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1762446666625!5m2!1sen!2sin"
+                    width="750" height="450" style="border-radius: 10px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section> <br><br>
+
+    <footer class="footer">
+
+        <div class="footerdiv">
+            <div>
+                <h6 class="text-white">PRODUCTS</h6>
+                <hr class="text-white" style="width: 120px;">
+                <a href="">Laptops</a><br>
+                <a href="">Smart phones</a><br>
+                <a href="">Smartwatchs</a><br>
+                <a href="">Asus</a><br>
+                <a href="">Vivo</a><br>
+                <a href="">Firee bolt</a><br>
+            </div>
+
+            <div class="text-white" style="margin-left: 130px;">
+                <h6>WORKING TIME</h6>
+                <hr>
+                <pre>Monday-Friday   ------ 09.00-20.00</pre>
+                <pre>Saturday        ------ 10.00-20.45</pre>
+                <pre>Sunday          ------ Closed</pre>
+                <pre>Pubilc holidays ------ Closed</pre>
+            </div>
+
+            <div class="text-white" style="margin-left: 130px;">
+                <h6>ABOUT US</h6>
+                <hr>
+                <p>The Love Boat soon will be making an <br> other run. The Love Boat prompt mises <br> some to thing
+                    for everyone.
+                    our Speed <br> Racer. Going Speed Racer to best.</p>
+                <a href=""><i class="fa-brands fa-facebook-f icon" style="color: #ffffff;"></i></a>
+                <a href=""><i class="fa-brands fa-twitter icon" style="color: #ffffff;"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin-in icon" style="color: #ffffff;"></i></a>
+                <a href=""><i class="fa-brands fa-instagram icon" style="color: #ffffff;"></i></a>
+            </div>
+
+            <div class="text-white" style="margin-left: 130px;">
+                <h6>LOCATION</h6>
+                <hr>
+                <iframe
+                    src="
+                    https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125042.3461117986!2d78.05589513187309!3d11.653723377467443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1762446666625!5m2!1sen!2sin"
+                    width="280" height="170" style="border-radius: 10px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    <footer>
+        <center>
+            <div class="last">
+                <p>© Copyrights 2016- All Rights Reserved</p>
+            </div>
+        </center>
+    </footer>
+</body>
+
+<script>
+    function validation() {
+        var n1 = document.getElementById("i1").value;
+        var n2 = document.getElementById("i2").value;
+        var n3 = document.getElementById("i3").value;
+        var n4 = document.getElementById("i4").value;
+
+
+        var alpha = /^[a-zA-Z]+$/
+        var number = /^[0-9]{10}$/
+        var gmail = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9.-]+$/
+        var password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%^&*]).{6,}$/;
+
+
+        if (n1 === "") {
+            alert("Enter the name");
+        }
+
+        else if (!alpha.test(n1)) {
+            alert("Name must contain alphabets");
+        }
+
+        else if (n2 === "") {
+            alert("Enter the mobile number");
+        }
+
+        else if (!number.test(n2)) {
+            alert("Mobile number must contain 10 digits");
+        }
+
+        else if (n3 === "") {
+            alert("Enter your Gmail");
+        }
+
+        else if (!gmail.test(n3)) {
+            alert("Enter a valid Gmail");
+        }
+
+        else if (n4 === "") {
+            alert("Enter the password");
+        }
+
+        else if (!password.test(n4)) {
+            alert("Password does not meet the requirements");
+        }
+
+        else {
+            alert("✅ Login successful");
+        }
+
+    }
+
+</script>
+
+</html>

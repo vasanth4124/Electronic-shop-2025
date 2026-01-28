@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lapmart – Cart</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <style>
+        body {
+            background: #f4f4f4;
+        }
+
+        /* HEADER */
+        .header {
+            background-color: rgb(139, 137, 137);
+            box-shadow: 0 2px 8px black;
+            margin-top: 15px;
+            width: 1514px;
+            height: 110px;
+            border-radius: 10px;
+            position: fixed;
+            z-index: 4;
+        }
+
+        .introimg {
+            width: 200px;
+            height: 55px;
+            margin-top: 35px;
+            margin-left: 200px;
+        }
+
+        .ul {
+            list-style-type: none;
+            display: flex;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .uldiv {
+            margin-left: 100px;
+            margin-top: 20px;
+        }
+
+        li {
+            padding: 25px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        a:hover {
+            color: black;
+        }
+
+        .headerparent {
+            display: flex;
+            padding-top: 0px;
+            position: fixed;
+        }
+
+        .login {
+            background-color: rgb(101, 100, 100);
+            border: none;
+            color: white;
+            border-radius: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 25px;
+            padding-right: 25px;
+            margin-bottom: 10px;
+        }
+
+        .login:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* CART */
+        .cart-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 160px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .buy-btn {
+            background: #28a745;
+            border: none;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 5px
+        }
+
+        .buy-btn:hover {
+            background: #1f7d36
+        }
+
+        .clear-btn {
+            background: red;
+            border: none;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 5px
+        }
+
+        .clear-btn:hover {
+            background: darkred
+        }
+
+        .buy-all-btn {
+            background: #198754;
+            border: none;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 5px
+        }
+
+        .buy-all-btn:hover {
+            background: #146c43
+        }
+
+        /* FOOTER */
+        .footer {
+            margin-top: 60px;
+            padding: 25px;
+            background-color: rgb(139, 137, 137);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .footer a:hover {
+            color: black;
+        }
+
+        .footerdiv {
+            display: flex;
+            margin-left: 90px;
+        }
+
+        .icon {
+            border: 1px solid rgb(255, 255, 255);
+            margin: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 25px;
+        }
+
+
+
+        .icon:hover {
+            border-color: black;
+            color: black;
+        }
+
+
+        .last {
+            color: white;
+            height: 30px;
+            background-color: rgb(74, 74, 74);
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="headerparent">
+            <div><img src="./Lapmart- logo.png" alt="image" class="introimg"></div>
+            <div class="uldiv">
+                <ul class="ul">
+                    <li><a href="./intro.html">Home</a></li>
+                    <li><a href="#about">About us</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a href="" class="dropdown-toggle" data-bs-toggle="dropdown">Laptops</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">Asus</a></li>
+                            <li><a href="" class="dropdown-item">Dell</a></li>
+                            <li><a href="" class="dropdown-item">Lenova</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-bs-toggle="dropdown">Mobiles</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">vivo</a></li>
+                            <li><a href="" class="dropdown-item">Oppo</a></li>
+                            <li><a href="" class="dropdown-item">Google</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-bs-toggle="dropdown">Smart watch</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="" class="dropdown-item">Firebolt</a></li>
+                            <li><a href="" class="dropdown-item">Boat</a></li>
+                            <li><a href="" class="dropdown-item">Apple</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">contact</a></li>
+                    <li style="color: white;"><a href="./addtocart.html">Cart 🛒 <span id="countcart">0</span></a></li>
+                    <li><a href="./login.html"><button class="login">Login</button></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- CART -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5 cart-box">
+                <h4 class="text-center mb-3">🛒 Cart Items</h4>
+                <ul id="cartList" class="list-unstyled"></ul>
+
+                <div class="d-flex justify-content-between mt-3">
+                    <button class="clear-btn" onclick="clearCart()">Clear</button>
+                    <button class="buy-all-btn" onclick="buyAll()">Buy All</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footerdiv">
+            <div>
+                <h6 class="text-white">PRODUCTS</h6>
+                <hr class="text-white" style="width: 120px;"> <a href="">Laptops</a><br> <a href="">Smart phones</a><br>
+                <a href="">Smartwatchs</a><br> <a href="">Asus</a><br> <a href="">Vivo</a><br> <a href="">Firee
+                    bolt</a><br>
+            </div>
+            <div class="text-white" style="margin-left: 130px;">
+                <h6>WORKING TIME</h6>
+                <hr>
+                <pre>Monday-Friday   ------ 09.00-20.00</pre>
+                <pre>Saturday        ------ 10.00-20.45</pre>
+                <pre>Sunday          ------ Closed</pre>
+                <pre>Pubilc holidays ------ Closed</pre>
+            </div>
+            <div class="text-white" style="margin-left: 130px;">
+                <h6>ABOUT US</h6>
+                <hr>
+                <p>The Love Boat soon will be making an <br> other run. The Love Boat prompt mises <br> some to thing
+                    for everyone. our Speed <br> Racer. Going Speed Racer to best.</p>
+                <a href=""><i class="fa-brands fa-facebook-f icon"></i></a>
+                <a href=""><i class="fa-brands fa-twitter icon"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin-in icon"></i></a>
+                <a href=""><i class="fa-brands fa-instagram icon"></i></a>
+            </div>
+
+            <div class="text-white" style="margin-left: 130px;">
+                <h6>LOCATION</h6>
+                <hr> <iframe
+                    src=" https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125042.3461117986!2d78.05589513187309!3d11.653723377467443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1762446666625!5m2!1sen!2sin"
+                    width="280" height="170" style="border-radius: 10px;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </footer>
+
+    <footer>
+        <center>
+            <div class="last">
+                <p>© Copyrights 2025- All Rights Reserved</p>
+            </div>
+        </center>
+    </footer>
+
+    <script>
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            document.getElementById('countcart').innerText = cart.length;
+            let list = document.getElementById('cartList');
+            list.innerHTML = '';
+
+            cart.forEach((item, i) => {
+                list.innerHTML += `
+    <li class="mb-2 d-flex justify-content-between">
+      ${item.name} – ${item.price}
+      <div>
+        <button onclick="removeItem(${i})">❌</button>
+        <button class="buy-btn" onclick="buySingle(${i})">Buy</button>
+      </div>
+    </li>`;
+            })
+        }
+
+        function buySingle(i) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            alert(`Buying ${cart[i].name}`);
+            cart.splice(i, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function buyAll() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length === 0) { alert('Cart empty'); return }
+            localStorage.removeItem('cart');
+            alert('Purchase successful');
+            loadCart();
+        }
+
+        function removeItem(i) {
+            let cart = JSON.parse(localStorage.getItem('cart'));
+            cart.splice(i, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        function clearCart() { localStorage.removeItem('cart'); loadCart() }
+        window.onload = loadCart;
+    </script>
+
+</body>
+
+</html>

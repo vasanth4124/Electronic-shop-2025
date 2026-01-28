@@ -1,0 +1,388 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lapmart Showroom</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+    }
+
+    .card img {
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .cart-count {
+      background: red;
+      padding: 3px 8px;
+      border-radius: 50%;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <nav class="navbar navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="#">🛍️ Lapmart</a>
+
+    <div>
+      <select class="form-select d-inline w-auto" onchange="filterProducts(this.value)">
+        <option value="All">All</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Mobile">Mobile</option>
+        <option value="Smart Watch">Smart Watch</option>
+      </select>
+
+      <span class="ms-4">
+        Cart 🛒 <span id="cartCount" class="cart-count">0</span>
+      </span>
+    </div>
+  </nav>
+
+ 
+  <div class="container mt-4">
+    <div class="row" id="productContainer"></div>
+  </div>
+
+  </body>
+
+<script>
+  const products = [
+    {
+      id: 1,
+      category: "Laptop",
+      name: "ASUS VivoBook 15",
+      price: 49990,
+      image: "./asus lap 2.jpg"
+    },
+    {
+      id: 2,
+      category: "Mobile",
+      name: "Vivo Y400 5G",
+      price: 26999,
+      image: "./vivo 2.png"
+    },
+    {
+      id: 3,
+      category: "Smart Watch",
+      name: "Fire-Boltt Talk",
+      price: 999,
+      image: "./fire bolt img 2.jpg"
+    },
+    {
+      id: 4,
+      category: "Laptop",
+      name: "Dell 15 Ryzen",
+      price: 36680,
+      image: "./dell img 1.jpg"
+    },
+    {
+      id: 5,
+      category: "Smart Watch",
+      name: "Boat Lunar Discovery",
+      price: 1499,
+      image: "./boat 1.png"
+    },
+    {
+      id: 6,
+      category: "Mobile",
+      name: "Oppo F31 Pro 5G",
+      price: 30999,
+      image: "./oppo 1.jpg"
+    },
+    {
+      id: 7,
+      category: "Mobile",
+      name: "Google Pixel 9",
+      price: 60900,
+      image: "./google 1.jpg"
+    },
+    {
+      id: 8,
+      category: "Laptop",
+      name: "Lenovo V15",
+      price: 42980,
+      image: "./lenova 1.jpg"
+    },
+    {
+      id: 9,
+      category: "Smart Watch",
+      name: "Apple Watch Ultra 3",
+      price: 104900,
+      image: "./apple 1.png"
+    }
+  ];
+
+
+  function displayProducts(items) {
+    const container = document.getElementById("productContainer");
+    container.innerHTML = "";
+
+    items.forEach(product => {
+      container.innerHTML += `
+      <div class="col-md-4 mb-4">
+        <div class="card bg-dark text-white">
+          <img src="${product.image}" class="card-img-top">
+          <div class="card-body">
+            <h5>${product.name}</h5>
+            <p>₹${product.price}</p>
+            <button class="btn btn-success" onclick="addToCart(${product.id})">
+              Add to Cart 🛒
+            </button>
+            <a
+                            href="https://www.amazon.in/Y400-Pro-Storage-Additional-Exchange/dp/B0F9X4WSGC/ref=sr_1_3?adgrpid=1324913117142635&dib=eyJ2IjoiMSJ9.eYa8zi3DjGT62Rtf2MLbmmWYt9pdmX5qv6wyBGI2eQQyeriSE3JpzWA2S5QCBukDxAxVf0eO7Nma_auxSz6hnzfFHQDPRhmuK0BtFxJvNxOzdJ9QvhXM_UXqrYNfYDvkPkpaO6mYQonIC8joaWGw1EatrxmvlxQ5i6gZWBcU3rNUiC-RUZVYviDcxTx76R0bdcUnMhedXZl-Morw6VKXtUQKOc0olsnttrNcw_jQ46s.dBGUZ7E0MUFIT_EVxM-_RL-gULbTpsgpys8bgjJ1R4k&dib_tag=se&hvadid=82807340870281&hvbmt=bb&hvdev=c&hvlocphy=156232&hvnetw=o&hvqmt=b&hvtargid=kwd-82807950673620%3Aloc-90&hydadcr=24541_2369358&keywords=vivo+pro+mobile+price&mcid=67d4b4be1e4b3da6a324569f9c566d4b&msclkid=3fa43842ec9a1115b485514f1e0baf79&qid=1762521747&sr=8-3"
+                            target="_blank" class="btn btn-primary">Show price</a>
+          </div>
+        </div>
+      </div>
+    `;
+    });
+  }
+
+  
+  function filterProducts(category) {
+    if (category === "All") {
+      displayProducts(products);
+    } else {
+      const filtered = products.filter(p => p.category === category);
+      displayProducts(filtered);
+    }
+  }
+
+  function addToCart(id) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const product = products.find(p => p.id === id);
+    cart.push(product);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    updateCartCount();
+    alert(`${product.name} added to cart`);
+  }
+
+  function updateCartCount() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").innerText = cart.length;
+  }
+
+  displayProducts(products);
+  updateCartCount();
+
+</script>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lapmart Showroom</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #111;
+      color: white;
+    }
+
+    header {
+      background: #000;
+      padding: 15px 30px;
+    }
+
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      margin: 0;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    header a:hover {
+      color: #0d6efd;
+    }
+
+    .products-wrapper {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .card {
+      width: 350px;
+      background: #1c1c1c;
+      color: white;
+    }
+
+    .card img {
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    footer {
+      background: #000;
+      margin-top: 60px;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="d-flex justify-content-between">
+  <h3>🛍️ Lapmart</h3>
+
+  <ul>
+    <li><a href="javascript:void(0)" onclick="filterProducts('all')">Home</a></li>
+    <li><a href="javascript:void(0)" onclick="filterProducts('laptop')">Laptops</a></li>
+    <li><a href="javascript:void(0)" onclick="filterProducts('mobile')">Mobiles</a></li>
+    <li><a href="javascript:void(0)" onclick="filterProducts('watch')">Smart Watch</a></li>
+    <li>
+      Cart 🛒 <span id="countcart">0</span>
+    </li>
+  </ul>
+</header>
+
+<!-- PRODUCTS -->
+<section class="container">
+  <div class="products-wrapper">
+
+    <!-- Laptop -->
+    <div class="cart" data-category="laptop">
+      <div class="card">
+        <img src="./asus lap 2.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5>ASUS VivoBook 15</h5>
+          <p>₹49,990</p>
+          <button class="btn btn-success" onclick="addcart('ASUS VivoBook 15','₹49,990',event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="cart" data-category="mobile">
+      <div class="card">
+        <img src="./vivo 2.png" class="card-img-top">
+        <div class="card-body">
+          <h5>Vivo Y400 5G</h5>
+          <p>₹26,999</p>
+          <button class="btn btn-success" onclick="addcart('Vivo Y400 5G','₹26,999',event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Watch -->
+    <div class="cart" data-category="watch">
+      <div class="card">
+        <img src="./fire bolt img 2.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5>Fire-Boltt Smart Watch</h5>
+          <p>₹999</p>
+          <button class="btn btn-success" onclick="addcart('Fire-Boltt Watch','₹999',event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laptop -->
+    <div class="cart" data-category="laptop">
+      <div class="card">
+        <img src="./dell img 1.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5>Dell 15 Ryzen</h5>
+          <p>₹36,680</p>
+          <button class="btn btn-success" onclick="addcart('Dell 15 Ryzen','₹36,680',event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile -->
+    <div class="cart" data-category="mobile">
+      <div class="card">
+        <img src="./google 1.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5>Google Pixel 9</h5>
+          <p>₹60,900</p>
+          <button class="btn btn-success" onclick="addcart('Google Pixel 9','₹60,900',event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Watch -->
+    <div class="cart" data-category="watch">
+      <div class="card">
+        <img src="./apple 1.png" class="card-img-top">
+        <div class="card-body">
+          <h5>Apple Watch Ultra 3</h5>
+          <p>₹1,04,900</p>
+          <button class="btn btn-success" onclick="addcart('Apple Watch Ultra 3','₹1,04,900',event)">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Lapmart — All Rights Reserved
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  function addcart(name, price, event) {
+    event.preventDefault();
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ name, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    document.getElementById("countcart").textContent = cart.length;
+    alert(name + " added to cart");
+  }
+
+  function filterProducts(category) {
+    const products = document.querySelectorAll(".cart");
+
+    products.forEach(product => {
+      const productCategory = product.getAttribute("data-category");
+
+      if (category === "all" || productCategory === category) {
+        product.classList.remove("hide");
+      } else {
+        product.classList.add("hide");
+      }
+    });
+  }
+
+  // Load cart count on refresh
+  document.getElementById("countcart").textContent =
+    JSON.parse(localStorage.getItem("cart"))?.length || 0;
+</script>
+
+</body>
+</html>
