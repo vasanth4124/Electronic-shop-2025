@@ -103,8 +103,7 @@ a:hover {
   display: flex;
   flex-wrap: nowrap;       /* 🔥 THIS IS THE KEY */
   justify-content: center;
-  gap: 25px;
-  overflow-x: auto;        /* scroll if many items */
+  gap: 25px;      
 }
 
 /* Product card */
